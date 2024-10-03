@@ -143,11 +143,11 @@ async def runAll(query):
                     status_task = f"{Fore.RED}Failed{Style.RESET_ALL}"
                     break 
 
-        AUTO_BOOSTER = True #True for activate auto booster
+        AUTO_BOOSTER = False #True for activate auto booster
         status_autoboost = f"{Fore.GREEN}On{Style.RESET_ALL}" if AUTO_BOOSTER else f"{Fore.RED}Off{Style.RESET_ALL}"
         
         if AUTO_BOOSTER:
-            for booster in ['bot', 'tapmul', 'regen', 'max']:
+            for booster in ['tapmul', 'regen', 'max']:
                 await boosterUp(session, query, booster)
 
         print(f"[{userid}] | Balance: {Fore.GREEN}{balance}{Style.RESET_ALL} | Wood: {Fore.YELLOW}{wood_count}/{wood_max}{Style.RESET_ALL} | Next: {next_user} - {next_balance} | Tasks: {status_task} | Auto Boosters: {status_autoboost}")
